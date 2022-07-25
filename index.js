@@ -175,7 +175,7 @@ const resolvers = {
     Mutation: {
         addProduct(_, { product }) {
             const id = randomUUID()
-            if (!args.product.colors?.length) {
+            if (!product.colors?.length) {
                 throw new ApolloError("No product colors is provided")
             }
             productsStorage.push({ id, ...product })
